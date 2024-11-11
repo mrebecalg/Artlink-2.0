@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users, path: 'users'
 
-  devise_for :artists, skip: [:passwords], controllers: { sessions: 'artists/sessions' }
-
   get "pages/profile"
   resources :publications, only: [:index, :new, :create, :show, :edit, :update, :destroy]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -19,7 +17,4 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
-  namespace :admin do
-    resources :dashboard, only: [:index] # Solo para ejemplo
-  end
 end

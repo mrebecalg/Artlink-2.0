@@ -1,4 +1,4 @@
-<h2>Iniciar sesion como cliente</h2>
+<h2>Iniciar sesion</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
@@ -14,10 +14,6 @@
   <div class="actions">
     <%= f.submit "Log in" %>
   </div>
-
-  <div class="text-center mt-3">
-  <p>¿Eres un artista? <%= link_to "Iniciar sesión como Artista", new_artist_session_path, class: "btn btn-secondary" %></p>
-</div>
 
 <% end %>
 
