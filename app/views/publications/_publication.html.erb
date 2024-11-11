@@ -1,21 +1,20 @@
 <div id="<%= dom_id publication %>">
   <p>
-    <strong>Name:</strong>
+    <strong>Título:</strong>
     <%= publication.name %>
   </p>
 
   <p>
-    <strong>Description:</strong>
+    <strong>Descripción:</strong>
     <%= publication.description %>
   </p>
 
   <p>
-    <strong>Picture:</strong>
     <%= image_tag(publication.picture_url, width: 600) if publication.picture? %>
   </p>
 
   <p>
-    <strong>Price:</strong>
+    <strong>Precio:</strong>
     <%= publication.price %>
   </p>
 
