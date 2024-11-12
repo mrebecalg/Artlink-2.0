@@ -5,12 +5,14 @@
 <h1>Servicios</h1>
 
 <div id="publications">
-  <% @publications.each do |publication| %>
-    <%= render publication %>
-    <p>
-      <%= link_to "Ver", publication %>
-    </p>
-  <% end %>
+  <div id="service">
+    <% @publications.each do |publication| %>
+      <%= render publication %>
+      <p>
+        <%= link_to "Ver", publication %>
+      </p>
+    <% end %>
+  </div>
 </div>
 
  <%# <%= link_to "New publication", new_publication_path %> 
