@@ -8,7 +8,9 @@ class PublicationsController < ApplicationController
 
   # GET /publications/1 or /publications/1.json
   def show
+    @user = User.find(params[:id])
   end
+  
 
   # GET /publications/new
   def new

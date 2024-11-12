@@ -7,3 +7,18 @@
 <p><strong>Instagram:</strong> <%= link_to @user.instagram, @user.instagram, target: "_blank" if @user.instagram.present? %></p>
 
 <%= link_to 'Editar perfil', edit_profile_path %>
+
+<h2>Publicaciones de <%= @user.username %></h2>
+
+<% if @user.publications.any? %>
+  <% @user.publications.each do |publication| %>
+    <div id="<%= dom_id(publication) %>">
+      <p><strong>Título:</strong> <%= publication.name %></p>
+      <p><strong>Descripción:</strong> <%= publication.description %></p>
+      <p><strong>Precio:</strong> <%= publication.price %></p>
+      <%= image_tag(publication.picture_url, width: 600) if publication.picture? %>
+    </div>
+  <% end %>
+<% else %>
+  <p>Este usuario aún no ha hecho publicaciones.</p>
+<% end %>
