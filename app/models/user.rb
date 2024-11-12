@@ -6,6 +6,10 @@ class User < ApplicationRecord
   # Custom password complexity validation
   validate :password_complexity
 
+  # Validaciones para el perfil
+  validates :username, presence: true, uniqueness: true
+  validates :biography, length: { maximum: 500 }
+
   private
   
   def password_complexity
@@ -14,5 +18,20 @@ class User < ApplicationRecord
         errors.add :La_contraseña, "debe incluir al menos un número y un carácter especial"
       end
     end
+  end
+
+  before_save :ensure_url_format
+
+  private
+
+  def ensure_url_format
+    self.facebook = format_url(facebook)
+    self.x = format_url(x)
+    self.instagram = format_url(instagram)
+  end
+
+  def format_url(url)
+    return url if url.blank? || url.start_with?("http://", "https://")
+    "https://#{url}"
   end
 end

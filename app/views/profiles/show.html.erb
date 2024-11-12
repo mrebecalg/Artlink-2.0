@@ -1,0 +1,9 @@
+<h1>Perfil de <%= @user.username %></h1>
+
+<p><strong>Biografía:</strong> <%= @user.biography %></p>
+
+<p><strong>Facebook:</strong> <%= link_to @user.facebook, @user.facebook, target: "_blank" if @user.facebook.present? %></p>
+<p><strong>X:</strong> <%= link_to @user.x, @user.x, target: "_blank" if @user.x.present? %></p>
+<p><strong>Instagram:</strong> <%= link_to @user.instagram, @user.instagram, target: "_blank" if @user.instagram.present? %></p>
+
+<%= link_to 'Editar perfil', edit_profile_path %>

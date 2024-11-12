@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   get "pages/profile"
   resources :publications, only: [:index, :new, :create, :show, :edit, :update, :destroy]
+  resource :profile, only: [:show, :edit, :update]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   root "pages#homepage"
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
