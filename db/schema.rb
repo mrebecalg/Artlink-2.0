@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_11_12_000611) do
+ActiveRecord::Schema[8.0].define(version: 2024_11_12_022148) do
   create_table "artists", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -41,6 +41,8 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_12_000611) do
     t.decimal "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id", null: false
+    t.index ["user_id"], name: "index_publications_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -61,4 +63,5 @@ ActiveRecord::Schema[8.0].define(version: 2024_11_12_000611) do
   end
 
   add_foreign_key "profiles", "users"
+  add_foreign_key "publications", "users"
 end
