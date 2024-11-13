@@ -12,14 +12,15 @@
     <strong>Descripción:</strong>
     <%= publication.description %>
   </p>
+  
+  <p>
+    <strong>Precio:</strong>
+    <%= publication.price %>
+  </p>
 
   <p>
     <%= image_tag(publication.picture_url, width: 600) if publication.picture? %>
   </p>
 
-  <p>
-    <strong>Precio:</strong>
-    <%= publication.price %>
-  </p>
 
 </div>

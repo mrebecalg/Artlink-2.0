@@ -7,9 +7,12 @@
 <div id="publications">
   <div id="service">
     <% @publications.each do |publication| %>
-      <%= render publication %>
+      <p><strong>Autor:</strong> <%= publication.user.username %></p>
+      <p><strong>Título:</strong> <%= publication.name %></p>
+      <p><strong>Precio:</strong> <%= publication.price %></p>
+      <%= image_tag(publication.picture_url, width: 600) if publication.picture? %>
       <p>
-        <%= link_to "Ver", publication %>
+        <%= link_to "Ver", publication, class:"btn btn-secondary" %>
       </p>
     <% end %>
   </div>

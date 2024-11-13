@@ -1,7 +1,7 @@
 <%= form_with(model: request) do |form| %>
   <% if request.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(request.errors.count, "error") %> prohibited this request from being saved:</h2>
+      <h2><%= pluralize(request.errors.count, "error") %> impiden que la solicitud sea creada:</h2>
 
       <ul>
         <% request.errors.each do |error| %>
@@ -19,25 +19,25 @@
 
   <div>
     <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, class: "form-control" %>
   </div>
 
   <div>
     <%= form.label :description, style: "display: block" %>
-    <%= form.textarea :description %>
+    <%= form.textarea :description, class: "form-control" %>
   </div>
 
   <div>
     <%= form.label :contact, style: "display: block" %>
-    <%= form.text_field :contact %>
+    <%= form.text_field :contact, class: "form-control" %>
   </div>
 
   <div>
     <%= form.label :picture, style: "display: block" %>
-    <%= form.text_field :picture %>
+    <%= form.file_field :picture, class: "form-control-file" %>
   </div>
 
   <div>
-    <%= form.submit %>
+     <%= form.submit "Aceptar", class:"btn btn-success" %>
   </div>
 <% end %>

@@ -2,33 +2,30 @@
 
 <% content_for :title, "Requests" %>
 
-<h1>Requests</h1>
+<h1>Bandeja de Solicitudes</h1>
 
-<div id="requests">
-  <%# <% @requests.each do |request| %>
-    <%# <%= render request %> 
-    <%# <p>
-      <%= link_to "Show this request", request %>
-    <%# </p> %>
-  <%# <% end %>  
-  <h2>Requests received</h2>
+<div id="requests"> 
+  <h2>Recibidas</h2>
   <% @request_received.each do |request| %>
-    <%= render request %> 
-    <p>
-      <%= link_to "Show this request", request %>
-    </p>
+    <div id="requests_received">
+      <%= render request %> 
+      <p>
+        <%= link_to "Ver solicitud", edit_request_path(request) , class:"btn btn-secondary" %>
+      </p>
+    </div>
   <% end %>  
 
 </div>
 
 <div id="requests">
-  <h2>Requests Sent</h2>
+  <h2>Enviadas</h2>
   <% @request_sent.each do |request| %>
-    <%= render request %> 
-    <p>
-      <%= link_to "Show this request", request %>
-    </p>
+    <div id="requests_sent">
+      <%= render request %> 
+      <p>
+        <%= link_to "Ver solicitud", request , class:"btn btn-secondary" %>
+      </p>
+    </div>
   <% end %>  
 </div>
 
-<%= link_to "New request", new_request_path %>

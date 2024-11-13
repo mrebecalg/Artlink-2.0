@@ -3,8 +3,9 @@
 <%= render @request %>
 
 <div>
-  <%= link_to "Edit this request", edit_request_path(@request) %> |
-  <%= link_to "Back to requests", requests_path %>
+  <%= link_to "Regresar a Solicitudes", requests_path, class:"btn btn-secondary"%>
+  <% if current_user.id == @request.sender_id %>
+    <%= button_to "Cancelar Solicitud", @request, method: :delete, class:"btn btn-danger" %>
+  <%end%>
 
-  <%= button_to "Destroy this request", @request, method: :delete %>
 </div>

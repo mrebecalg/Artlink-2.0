@@ -39,6 +39,9 @@
                 <a class="nav-link <%= 'active' if current_page?(publications_path) %>" href="<%= new_publication_path %>">Nueva publicación</a>
               </li>
               <li class="nav-item">
+                <a class="nav-link <%= 'active' if current_page?(requests_path) %>" href="<%= requests_path %>">Solicitudes</a>
+              </li>     
+              <li class="nav-item">
                 <a class="nav-link <%= 'active' if current_page?(profile_path) %>" href="<%= profile_path %>">Perfil</a>
               </li>            
               <p class="navbar-text float-right">
