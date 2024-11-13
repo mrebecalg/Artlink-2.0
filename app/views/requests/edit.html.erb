@@ -3,9 +3,10 @@
 <h1>Aceptar o rechazar</h1>
 
 <%# <%= render "form", request: @request %> 
-
+<div>
+<%= render @request %>
+</div>
 <%= form_with(model: @request) do |form| %>
-
   <div>
     <%= form.label :Status, style: "display: block" %>
     <%= form.select :status, ["Aceptado","Rechazado"], { class: 'form-control' } %>
