@@ -1,0 +1,34 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Requests" %>
+
+<h1>Requests</h1>
+
+<div id="requests">
+  <%# <% @requests.each do |request| %>
+    <%# <%= render request %> 
+    <%# <p>
+      <%= link_to "Show this request", request %>
+    <%# </p> %>
+  <%# <% end %>  
+  <h2>Requests received</h2>
+  <% @request_received.each do |request| %>
+    <%= render request %> 
+    <p>
+      <%= link_to "Show this request", request %>
+    </p>
+  <% end %>  
+
+</div>
+
+<div id="requests">
+  <h2>Requests Sent</h2>
+  <% @request_sent.each do |request| %>
+    <%= render request %> 
+    <p>
+      <%= link_to "Show this request", request %>
+    </p>
+  <% end %>  
+</div>
+
+<%= link_to "New request", new_request_path %>

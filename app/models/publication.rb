@@ -4,4 +4,5 @@ class Publication < ApplicationRecord
   validates :description, presence: true
   validates :price, presence: true
   belongs_to :user
+  has_many :requests
 end
