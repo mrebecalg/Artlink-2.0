@@ -21,7 +21,7 @@
 
   <p>
     <strong>Picture:</strong>
-    <%= request.picture %>
+     <%= image_tag(request.picture_url, width: 200) if request.picture? %>
   </p>
 
 </div>
