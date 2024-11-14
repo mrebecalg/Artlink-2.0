@@ -1,10 +1,68 @@
-/*
- * This is a manifest file that'll be compiled into application.css.
- *
- * With Propshaft, assets are served efficiently without preprocessing steps. You can still include
- * application-wide styles in this file, but keep in mind that CSS precedence will follow the standard
- * cascading order, meaning styles declared later in the document or manifest will override earlier ones,
- * depending on specificity.
- *
- * Consider organizing styles into separate files for maintainability.
- */
+/* Asegúrate de que el contenedor de la navbar sea flexible */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Esto mantiene el brand a la izquierda y el resto a la derecha */
+    align-items: center; /* Alinea los elementos verticalmente */
+  }
+  
+  /* Alineación del contenedor de los elementos */
+  .navbar .container-fluid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  
+  /* Alinea el brand (Artlink) a la izquierda */
+  .navbar-brand {
+    flex: 1; /* Esto asegura que el brand ocupe el espacio a la izquierda */
+    color: white; /* Color del texto del brand */
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+  
+  /* Alinea los elementos del menú a la derecha */
+  .navbar-nav {
+    display: flex;
+    justify-content: flex-end; /* Alinea todos los enlaces a la derecha */
+    width: 100%;
+  }
+  
+  /* Estilo para los enlaces de la barra de navegación */
+  .navbar-nav .nav-item .nav-link {
+    color: white; /* Color blanco para los enlaces */
+    font-size: 1.1em;
+    margin-left: 20px; /* Separación entre los enlaces */
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-nav .nav-item .nav-link:hover {
+    color: #f1f1f1; /* Cambia el color cuando pasas el mouse */
+  }
+  
+  /* Estilo para los botones de usuario (registrarse, iniciar sesión) */
+  .navbar-text {
+    display: flex;
+    justify-content: flex-end; /* Los enlaces de usuario se alinean a la derecha */
+  }
+  
+  .navbar-text .navbar-link {
+    color: white;
+    font-size: 1.1em;
+    margin-left: 10px; /* Separación entre los enlaces */
+    text-decoration: none;
+  }
+  
+  .navbar-text .navbar-link:hover {
+    color: #f1f1f1; /* Cambia el color al pasar el mouse */
+  }
+  
+  /* Estilo para el botón de la hamburguesa (en dispositivos móviles) */
+  .navbar-toggler {
+    border-color: #fff; /* Color blanco para el borde */
+  }
+  
+  .navbar-toggler-icon {
+    background-color: #fff; /* Color blanco para el icono */
+  }
+  

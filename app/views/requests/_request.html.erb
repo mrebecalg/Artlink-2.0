@@ -1,27 +1,30 @@
-<div id="<%= dom_id request %>">
-  <p>
-    <strong>Status:</strong>
-    <%= request.status %>
-  </p>
+<div class="solicitud">
+  <div class="imagen">
+    <p>
+      <%= image_tag(request.picture_url, width: 300) if request.picture? %>
+    </p>
+  </div>
 
-  <p>
-    <strong>Title:</strong>
-    <%= request.title %>
-  </p>
+  <div class="texto">
+    <p>
+      <strong>Status:</strong>
+      <%= request.status %>
+    </p>
 
-  <p>
-    <strong>Description:</strong>
-    <%= request.description %>
-  </p>
+    <p>
+      <strong>Title:</strong>
+      <%= request.title %>
+    </p>
 
-  <p>
-    <strong>Contact:</strong>
-    <%= request.contact %>
-  </p>
+    <p>
+      <strong>Description:</strong>
+      <%= request.description %>
+    </p>
 
-  <p>
-    <strong>Picture:</strong>
-     <%= image_tag(request.picture_url, width: 200) if request.picture? %>
-  </p>
-
+    <p>
+      <strong>Contact:</strong>
+      <%= request.contact %>
+    </p>
+  </div>
 </div>
+

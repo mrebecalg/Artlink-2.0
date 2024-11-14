@@ -1,39 +1,42 @@
-<h2>Ajustes</h2>
+<h1>Ajustes</h1>
+<div class="user">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+    <div class="field">
+      <%= f.label :Email %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "nombre@gmail.com" %>
+    </div>
+ 
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <% end %>
 
-  <div class="field">
-    <%= f.label :Email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "nombre@gmail.com" %>
-  </div>
-<br>
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <div class="field">
+      <%= f.label :Contraseña %>
+      <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "Déjalo en blanco si no quieres realizar cambios" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :Confirmar_Contraseña %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :Contraseña_Actual %>
+      <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control", placeholder: "Ingresa tu contraseña actual para confirmar los cambios" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Cambiar", class:"btn btn-primary"%>
+    </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :Contraseña %><br />
-    <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "Déjalo en blanco si no quieres realizar cambios" %>
+  <br><h3>Eliminar mi cuenta</h3><br />
+  <div class="buttons-container">
+    <div>
+    <%= button_to "Eliminar mi cuenta", registration_path(resource_name), data: { confirm: "Estás seguro?", turbo_confirm: "Estás seguro?" }, method: :delete, class:"btn btn-danger" %>
+    </div>
+    <%= link_to "Atrás", :back, class:"btn btn-secondary" %>
   </div>
-
-  <div class="field">
-    <%= f.label :Confirmar_Contraseña %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
-  </div>
-<br>
-  <div class="field">
-    <%= f.label :Contraseña_Actual %><br />
-    <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control", placeholder: "Ingresa tu contraseña actual para confirmar los cambios" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Cambiar", class:"btn btn-primary"%>
-  </div>
-<% end %>
-
-<br><h3>Eliminar mi cuenta</h3>
-
-<div><%= button_to "Eliminar mi cuenta", registration_path(resource_name), data: { confirm: "Estás seguro?", turbo_confirm: "Estás seguro?" }, method: :delete, class:"btn btn-danger" %></div>
-
-<%= link_to "Atrás", :back, class:"btn btn-secondary" %>
+</div>

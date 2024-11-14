@@ -9,20 +9,28 @@
 
 <% content_for :title, "Publications" %>
 
-<h1>Servicios</h1>
-
-<div id="publications">
-  <div id="service">
-    <% @publications.each do |publication| %>
-      <p><strong>Autor:</strong> <%= publication.user.username %></p>
-      <p><strong>Título:</strong> <%= publication.name %></p>
-      <p><strong>Precio:</strong> <%= publication.price %></p>
-      <%= image_tag(publication.picture_url, width: 600) if publication.picture? %>
-      <p>
-        <%= link_to "Ver", publication, class:"btn btn-secondary" %>
-      </p>
-    <% end %>
-  </div>
+<div>
+  <%= form_tag publications_path, method: :get, class: "form-inline d-flex" do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Buscar...", class: "form-control flex-grow-1" %>
+    <%= submit_tag "Buscar", class: "btn btn-primary" %>
+  <% end %>
+</div>
+<div class="service-container">
+  <h3>Servicios</h3>
+  <% @publications.each do |publication| %>
+    <div class="service-item">
+      <div class="service-text">
+        <p><strong>Autor:</strong> <%= publication.user.username %></p>
+        <p><strong>Título:</strong> <%= publication.name %></p>
+        <p><strong>Precio:</strong> <%= publication.price %></p>
+        <p>
+          <%= link_to "Ver", publication, class:"btn btn-secondary" %>
+        </p>
+      </div>
+      <div class="service-image">
+        <%= image_tag(publication.picture_url, width: 300, height: 300) if publication.picture? %>
+      </div>
+    </div>
+  <% end %>
 </div>
 
- <%# <%= link_to "New publication", new_publication_path %> 

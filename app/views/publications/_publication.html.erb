@@ -1,26 +1,26 @@
-<div id="<%= dom_id publication %>">
-  <p>
-    <strong>Título:</strong>
-    <%= publication.name %>
-  </p>
+<div class="publicacion">
+  <div class="texto">
+    <p>
+      <strong>Título:</strong>
+      <%= publication.name %>
+    </p>
 
-  <p>
-    Publicado por: <%= publication.user.username %>
-  </p>
+    <p>
+      <strong>Publicado por:</strong> <%= publication.user.username %>
+    </p>
 
-  <p>
-    <strong>Descripción:</strong>
-    <%= publication.description %>
-  </p>
-  
-  <p>
-    <strong>Precio:</strong>
-    <%= publication.price %>
-  </p>
+    <p>
+      <strong>Descripción:</strong>
+      <%= publication.description %>
+    </p>
+    
+    <p>
+      <strong>Precio:</strong>
+      <%= publication.price %>
+    </p>
+  </div>
 
-  <p>
-    <%= image_tag(publication.picture_url, width: 200) if publication.picture? %>
-  </p>
-
-
+  <div class="imagen">
+    <%= image_tag(publication.picture_url, width: 300) if publication.picture? %>
+  </div>
 </div>

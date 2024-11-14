@@ -1,25 +1,37 @@
-<div class="container">
-  <h1>@<%= @user.username %></h1>
+<div class="profile">
+  <div class="profile-header">
+    <h2>@<%= @user.username %></h2>
+    <p class="biography"><strong>Biografía:</strong> <%= @user.biography %></p>
+  </div>
 
-  <p><strong>Biografía:</strong> <%= @user.biography %></p>
+  <div class="social-links">
+    <p><%= link_to @user.facebook, @user.facebook, target: "_blank" if @user.facebook.present? %></p>
+    <p><%= link_to @user.x, @user.x, target: "_blank" if @user.x.present? %></p>
+    <p><%= link_to @user.instagram, @user.instagram, target: "_blank" if @user.instagram.present? %></p>
+  </div>
 
-  <p>  <%= link_to @user.facebook, @user.facebook, target: "_blank" if @user.facebook.present? %></p>
-  <p>  <%= link_to @user.x, @user.x, target: "_blank" if @user.x.present? %></p>
-  <p>  <%= link_to @user.instagram, @user.instagram, target: "_blank" if @user.instagram.present? %></p>
-  <%= link_to 'Editar perfil', edit_profile_path, class:"btn btn-primary" %>
+  <%= link_to 'Editar perfil', edit_profile_path, class: "btn btn-primary edit-btn" %>
 </div>
+
 <br>
-<div class="publications">
-  <h4>Publicaciones de <%= @user.username %></h4>
+<h4>Servicios de <%= @user.username %></h4>
+<%= link_to 'Agregar +', new_publication_path, class: "btn btn-primary edit-btn" %>
+<div class="service-container">
   <% if @user.publications.any? %>
     <% @user.publications.each do |publication| %>
-      <div id="<%= dom_id(publication) %>">
+    <div class="service-item">
+      <div class="service-text">
+        <p><strong>Autor:</strong> <%= publication.user.username %></p>
         <p><strong>Título:</strong> <%= publication.name %></p>
-        <p><strong>Descripción:</strong> <%= publication.description %></p>
         <p><strong>Precio:</strong> <%= publication.price %></p>
-        <%= image_tag(publication.picture_url, width: 600) if publication.picture? %>
-        <p><%= link_to "Ver", publication, class:"btn btn-secondary" %></p>
+        <p>
+          <%= link_to "Ver", publication, class:"btn btn-secondary" %>
+        </p>
       </div>
+      <div class="service-image">
+        <%= image_tag(publication.picture_url, width: 300, height: 300) if publication.picture? %>
+      </div>
+    </div>
     <% end %>
   <% else %>
     <p>Este usuario aún no ha hecho publicaciones.</p>

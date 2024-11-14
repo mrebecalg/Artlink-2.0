@@ -1,0 +1,50 @@
+/* Centrar el formulario en la página */
+h1 {
+    text-align: center;
+  }
+
+.form {
+    width: 100%;
+    max-width: 500px; /* Ajustamos el ancho máximo del formulario */
+    margin: 30px auto; /* Centrado vertical y horizontal */
+    padding: 20px;
+    background-color: #4da0ff; /* Color de fondo azul */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    color: white; /* Color de texto blanco */
+  }
+  
+  /* Estilo de los campos del formulario */
+  .form .form-control,
+  .form .form-control-file {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px; /* Bordes redondeados */
+    border: 1px solid #ccc; /* Borde sutil */
+  }
+  
+  /* Estilo del botón de submit */
+  .form .btn-success {
+    background-color: #ffffff; /* Verde para el botón de guardar */
+    color: #007bff;
+    padding: 12px 20px;
+    width: 100%; /* El botón ocupará todo el ancho disponible */
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+  
+  .form .btn-success:hover {
+    background-color: #a4f5d7; 
+    color: #007bff;/* Cambiar color al pasar el mouse */
+  }
+  
+  /* Estilo de las etiquetas */
+  .form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+  }
+  

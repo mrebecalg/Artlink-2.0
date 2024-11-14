@@ -3,7 +3,12 @@ class PublicationsController < ApplicationController
 
   # GET /publications or /publications.json
   def index
-    @publications = Publication.all
+    # @publications = Publication.all
+    if params[:search]
+      @publications = Publication.joins(:user).where("lower(publications.name) LIKE ? OR lower(users.username) LIKE ?", "%#{params[:search].downcase}%", "%#{params[:search].downcase}%")
+    else
+      @publications = Publication.all
+    end
   end
 
   # GET /publications/1 or /publications/1.json

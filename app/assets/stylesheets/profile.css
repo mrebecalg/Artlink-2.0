@@ -1,0 +1,61 @@
+/* Estilo general del contenedor de perfil */
+.profile {
+    background-color: #ddedff; /* Color de fondo gris claro */
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+  }
+  
+  /* Encabezado del perfil */
+  .profile-header {
+    margin-bottom: 20px;
+  }
+  
+  .profile-header h2 {
+    font-size: 2.5em;
+    color: #1DA1F2; /* Azul similar al de Twitter */
+    margin-bottom: 10px;
+  }
+  
+  /* Biografía alineada a la izquierda */
+  .biography {
+    font-size: 1.1em;
+    color: #090e2c;
+    text-align: left; /* Alineamos el texto a la izquierda */
+  }
+  
+  /* Enlaces de redes sociales alineados a la izquierda */
+  .social-links p {
+    margin: 10px 0;
+    text-align: left; /* Alineamos los enlaces a la izquierda */
+  }
+  
+  .social-links a {
+    color: #0f5daa;
+    text-decoration: none;
+    font-size: 1.2em;
+  }
+  
+  .social-links a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Estilo del botón de edición */
+  .edit-btn {
+    display: block;
+ 
+    text-align: center;
+    margin-top: 20px;
+    padding: 12px;
+    background-color: #1DA1F2; /* Azul de Twitter */
+    color: white;
+    border: none;
+    border-radius: 20px;
+    text-transform: uppercase;
+    font-size: 1.1em;
+  }
+  
+  .edit-btn:hover {
+    background-color: #0d8ccf; /* Cambia el color al pasar el ratón */
+  }
+  

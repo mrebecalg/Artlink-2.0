@@ -2,10 +2,10 @@
 
 <%= render @request %>
 
-<div>
-  <%= link_to "Regresar a Solicitudes", requests_path, class:"btn btn-secondary"%>
+<div class="buttons-container">
+  <%= link_to "Regresar a Solicitudes", requests_path, class:"btn btn-secondary" %>
+  
   <% if current_user.id == @request.sender_id %>
     <%= button_to "Cancelar Solicitud", @request, method: :delete, class:"btn btn-danger" %>
-  <%end%>
-
+  <% end %>
 </div>

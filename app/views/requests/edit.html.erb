@@ -7,8 +7,8 @@
 <%= render @request %>
 </div>
 <%= form_with(model: @request) do |form| %>
-  <div>
-    <%= form.label :Status, style: "display: block" %>
+  <div class="buttons-container">
+    <strong>STATUS</strong>
     <%= form.select :status, ["Aceptado","Rechazado"], { class: 'form-control' } %>
     <br>
      <%= form.submit "Guardar", class:"btn btn-success" %>
@@ -17,6 +17,6 @@
 
 <br>
 
-<div>
+<div class="buttons-container">
   <%= link_to "Regresar a Solicitudes", requests_path, class:"btn btn-secondary"%>
 </div>
