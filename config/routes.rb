@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :requests
-  devise_for :users, path: 'users'
+  devise_for :users, path: 'users', controllers: { sessions: 'users/sessions' }
 
   resources :publications, only: [:index, :new, :create, :show, :edit, :update, :destroy]
   resource :profile, only: [:show, :edit, :update]

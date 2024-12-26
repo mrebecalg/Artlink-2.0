@@ -19,6 +19,7 @@ gem "jbuilder"
 
 gem "carrierwave"
 gem "devise"
+gem 'devise-two-factor'
 gem "net-ssh"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]

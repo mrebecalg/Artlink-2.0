@@ -31,8 +31,9 @@
       <%= f.label :Confirmación_de_contraseña %>
       <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control' %>
     </div>
+
     <div class="actions">
-      <%= f.submit "Registrarse", class: "btn btn-success" %>
+      <%= f.submit "Registrarse", class: "btn btn-success", id: "register-button" %>
     </div>
   <% end %>
 
@@ -42,3 +43,13 @@
     <%= link_to "Ingresar", new_user_session_path, class: "btn btn-primary"%>
   </div>
 </div>
+
+<script>
+  document.getElementById("register-button").addEventListener("click", function(event) {
+    // Esperar a que se envíe el formulario
+    setTimeout(function() {
+      // Redirigir a la página de inicio de sesión
+      window.location.href = "<%= new_user_session_path %>";
+    }, 1); // Cambia el tiempo si es necesario
+  });
+</script>
