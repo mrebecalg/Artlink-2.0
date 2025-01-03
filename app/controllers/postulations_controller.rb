@@ -48,6 +48,9 @@ class PostulationsController < ApplicationController
   def update
     respond_to do |format|
       if @postulation.update(postulation_params)
+        if @postulation.status == "Aceptado"
+          @postulation.sender.update(access: 2)
+        end
         format.html { redirect_to @postulation, notice: "Postulation was successfully updated." }
         format.json { render :show, status: :ok, location: @postulation }
       else
