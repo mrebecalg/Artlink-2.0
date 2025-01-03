@@ -3,7 +3,7 @@ class RequestsController < ApplicationController
 
   # GET /requests or /requests.json
   def index
-    #@requests = Request.all
+    # @requests = Request.all
     @request_received = Request.where(receiver_id: current_user.id)
     @request_sent = Request.where(sender_id: current_user.id)
   end
@@ -20,7 +20,6 @@ class RequestsController < ApplicationController
 
   # GET /requests/1/edit
   def edit
-
   end
 
   # POST /requests or /requests.json
@@ -69,6 +68,6 @@ class RequestsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def request_params
-      params.expect(request: [ :title, :description, :contact, :picture, :sender_id, :receiver_id, :publication_id, :status])
+      params.expect(request: [ :title, :description, :contact, :picture, :sender_id, :receiver_id, :publication_id, :status ])
     end
 end

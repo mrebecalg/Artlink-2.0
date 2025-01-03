@@ -1,21 +1,22 @@
+
 <p style="color: green"><%= notice %></p>
 
 <% content_for :title, "Requests" %>
 
 <h1>Bandeja de Solicitudes</h1>
-
-<div id="requests"> 
-  <h2>Recibidas</h2>
-  <% @request_received.each do |request| %>
-    <div class="requests_received">
-      <%= render request %> 
-      <p>
-        <%= link_to "Ver solicitud", edit_request_path(request), class:"btn btn-secondary" %>
-      </p>
-    </div>
-  <% end %>  
-</div>
-
+<% if current_user.access == 2 %>    
+  <div id="requests"> 
+    <h2>Recibidas</h2>
+    <% @request_received.each do |request| %>
+      <div class="requests_received">
+        <%= render request %> 
+        <p>
+          <%= link_to "Ver solicitud", edit_request_path(request), class:"btn btn-secondary" %>
+        </p>
+      </div>
+    <% end %>  
+  </div>
+<% end %>  
 <div id="requests">
   <h2>Enviadas</h2>
   <% @request_sent.each do |request| %>
@@ -27,4 +28,3 @@
     </div>
   <% end %>  
 </div>
-

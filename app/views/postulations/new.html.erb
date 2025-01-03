@@ -1,0 +1,11 @@
+<% content_for :title, "New postulation" %>
+
+<h1>Postulate como artista</h1>
+
+<%= render "form", postulation: @postulation %>
+
+<br>
+
+<div>
+  <%= link_to "Cancelar", publications_path, class:"btn btn-secondary" %>
+</div>

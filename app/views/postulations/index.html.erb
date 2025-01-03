@@ -1,0 +1,38 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Postulations" %>
+
+<% if current_user.access == 0 %> 
+  <h1>Bandeja de Postulaciones</h1> 
+  <div id="requests"> 
+    <h2>Recibidas</h2>
+    <% @postulation_received.each do |postulation| %>
+      <div class="postulations_received">
+        <%= render postulation %> 
+        <p>
+          <%= link_to "Ver postulación", edit_postulation_path(postulation), class:"btn btn-secondary" %>
+        </p>
+      </div>
+    <% end %>  
+  </div>
+<% end %>  
+
+<% if current_user.access == 1 %> 
+  <div id="requests">
+    <h2>Mi postulación</h2>
+      <% if @postulation_sent.any? %>
+        <% @postulation_sent.each do |postulation| %>
+          <div class="postulations_sent">
+            <%= render postulation %> 
+            <p>
+              <%= link_to "Ver Postulación", postulation , class:"btn btn-secondary" %>
+              
+            </p>
+          </div>
+        <% end %>  
+    <% else %>
+      <p>Aún no te postulas, hazlo aquí:</p>
+      <%= link_to "Postulate", new_postulation_path, class:"btn btn-primary edit-btn" %>
+    <% end %>
+  </div>
+<% end %>  

@@ -1,0 +1,42 @@
+<%= form_with(model: postulation) do |form| %>
+  <% if postulation.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(postulation.errors.count, "error") %> impiden que la postulación sea creada:</h2>
+
+      <ul>
+        <% postulation.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+ <div>
+    <%= form.hidden_field :sender_id %>
+    <%= form.hidden_field :receiver_id %>
+  </div>
+
+<div class="form">
+  <div>
+    <%= form.label :Titulo, style: "display: block" %>
+    <%= form.text_field :title, placeholder: "Titulo de la postulación", class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :Descripción, style: "display: block" %>
+    <%= form.textarea :content, placeholder: "Cuentanos por qué quieres ser un artista en nuestra plataforma", class: "form-control" %>
+  </div>
+  <div>
+    <%= form.label :Usuario, style: "display: block" %>
+    <%= form.text_field :username, placeholder: "Tu nombre de usuario", class: "form-control" %>
+  </div>
+  <div>
+    <%= form.label :URL_Portafolio, style: "display: block" %>
+    <%= form.text_field :portfolio, placeholder: "Coloca un URL a tu portafolio", class: "form-control" %>
+  </div>
+
+  <div>
+     <%= form.submit "Aceptar", class:"btn btn-success" %>
+  </div>
+</div>
+<% end %>

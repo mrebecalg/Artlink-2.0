@@ -11,29 +11,32 @@
   </div>
 
   <%= link_to 'Editar perfil', edit_profile_path, class: "btn btn-primary edit-btn" %>
+  <%= link_to "Ver mi postulación", postulations_path, class:"btn btn-primary edit-btn" %>
 </div>
 
 <br>
-<h4>Servicios de <%= @user.username %></h4>
-<%= link_to 'Agregar +', new_publication_path, class: "btn btn-primary edit-btn" %>
-<div class="service-container">
-  <% if @user.publications.any? %>
-    <% @user.publications.each do |publication| %>
-    <div class="service-item">
-      <div class="service-text">
-        <p><strong>Autor:</strong> <%= publication.user.username %></p>
-        <p><strong>Título:</strong> <%= publication.name %></p>
-        <p><strong>Precio:</strong> <%= publication.price %></p>
-        <p>
-          <%= link_to "Ver", publication, class:"btn btn-secondary" %>
-        </p>
+<% if current_user.access == 2 %>
+  <h4>Servicios de <%= @user.username %></h4>
+  <%= link_to 'Agregar +', new_publication_path, class: "btn btn-primary edit-btn" %>
+  <div class="service-container">
+    <% if @user.publications.any? %>
+      <% @user.publications.each do |publication| %>
+      <div class="service-item">
+        <div class="service-text">
+          <p><strong>Autor:</strong> <%= publication.user.username %></p>
+          <p><strong>Título:</strong> <%= publication.name %></p>
+          <p><strong>Precio:</strong> <%= publication.price %></p>
+          <p>
+            <%= link_to "Ver", publication, class:"btn btn-secondary" %>
+          </p>
+        </div>
+        <div class="service-image">
+          <%= image_tag(publication.picture_url, width: 300, height: 300) if publication.picture? %>
+        </div>
       </div>
-      <div class="service-image">
-        <%= image_tag(publication.picture_url, width: 300, height: 300) if publication.picture? %>
-      </div>
-    </div>
+      <% end %>
+    <% else %>
+      <p>Este usuario aún no ha hecho publicaciones.</p>
     <% end %>
-  <% else %>
-    <p>Este usuario aún no ha hecho publicaciones.</p>
-  <% end %>
-</div>
+  </div>
+<% end %>

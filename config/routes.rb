@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
+  resources :postulations
   resources :requests
-  devise_for :users, path: 'users', controllers: { sessions: 'users/sessions' }
+  devise_for :users, path: "users", controllers: { sessions: "users/sessions" }
 
-  resources :publications, only: [:index, :new, :create, :show, :edit, :update, :destroy]
-  resource :profile, only: [:show, :edit, :update]
+  resources :publications, only: [ :index, :new, :create, :show, :edit, :update, :destroy ]
+  resource :profile, only: [ :show, :edit, :update ]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   root "publications#index"
 
@@ -17,5 +18,4 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-
 end

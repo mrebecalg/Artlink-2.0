@@ -1,0 +1,21 @@
+<% content_for :title, "Editing postulations" %>
+
+<h1>Aceptar o rechazar</h1>
+ 
+<div>
+<%= render @postulation %>
+</div>
+<%= form_with(model: @postulation) do |form| %>
+  <div class="buttons-container">
+    <strong>STATUS</strong>
+    <%= form.select :status, ["Aceptado","Rechazado"], { class: 'form-control' } %>
+    <br>
+     <%= form.submit "Guardar", class:"btn btn-success" %>
+  </div>
+<%end%>
+
+<br>
+
+<div class="buttons-container">
+  <%= link_to "Regresar a postulaciones", postulations_path, class:"btn btn-secondary"%>
+</div>
