@@ -9,3 +9,29 @@
     <%= button_to "Cancelar Solicitud", @request, method: :delete, class:"btn btn-danger" %>
   <% end %>
 </div>
+
+<% if @request.status == 'Finalizado' && @request.rating.nil? && current_user.id == @request.sender_id %>
+  <%= form_with model: @request, url: rate_request_path(@request), method: :patch do |form| %>
+    <div class="field">
+      <%= form.label :rating %>
+      <%= form.number_field :rating %>
+      <div id="star-rating"></div>
+      <%= form.hidden_field :rating, id: "rating-input" %>
+    </div>
+    <div class="actions">
+      <%= form.submit "Rate" %>
+    </div>
+  <% end %>
+<% end %>
+
+<script>
+  $(document).ready(function() {
+    $('#star-rating').raty({
+      path: 'https://cdnjs.cloudflare.com/ajax/libs/raty/2.7.1/images',
+      scoreName: 'request[rating]',
+      click: function(score, evt) {
+        $('#rating-input').val(score);
+      }
+    });
+  });
+</script>

@@ -1,5 +1,5 @@
 class RequestsController < ApplicationController
-  before_action :set_request, only: %i[ show edit update destroy ]
+  before_action :set_request, only: %i[ show edit update destroy rate ]
 
   # GET /requests or /requests.json
   def index
@@ -60,6 +60,14 @@ class RequestsController < ApplicationController
     end
   end
 
+  def rate
+    if @request.update(rating: params[:request][:rating])
+      redirect_to @request, notice: "Request was successfully rated."
+    else
+      render :show, status: :unprocessable_entity
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_request
@@ -68,6 +76,6 @@ class RequestsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def request_params
-      params.expect(request: [ :title, :description, :contact, :picture, :sender_id, :receiver_id, :publication_id, :status ])
+      params.expect(request: [ :title, :description, :contact, :picture, :sender_id, :receiver_id, :publication_id, :status, :rating ])
     end
 end

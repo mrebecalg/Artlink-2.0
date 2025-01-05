@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   resources :postulations
-  resources :requests
+  resources :requests do
+    member do
+      patch :rate
+    end
+  end
   devise_for :users, path: "users", controllers: { sessions: "users/sessions" }
 
   resources :publications, only: [ :index, :new, :create, :show, :edit, :update, :destroy ]

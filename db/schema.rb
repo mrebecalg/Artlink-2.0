@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_01_03_181455) do
+ActiveRecord::Schema[8.0].define(version: 2025_01_05_031117) do
   create_table "artists", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -44,6 +44,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_03_181455) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id", null: false
+    t.float "average_rating", default: 0.0
     t.index ["user_id"], name: "index_publications_on_user_id"
   end
 
@@ -58,6 +59,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_01_03_181455) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "status", default: "Pendiente"
+    t.integer "rating"
   end
 
   create_table "users", force: :cascade do |t|

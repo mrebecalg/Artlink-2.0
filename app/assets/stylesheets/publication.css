@@ -1,106 +1,122 @@
 /* Contenedor principal */
 .service-container {
-    background-color: #ddedff; /* Color de fondo gris claro */
-    padding: 20px;
-    border-radius: 8px;
-    margin: 20px 0;
-  }
-  
-  /* Cada item de servicio */
-  .service-item {
-    display: flex;
-    align-items: center; /* Alinea verticalmente los elementos */
-    margin-bottom: 15px;
-    padding: 15px;
-    border: 1px solid #ddd; /* Borde ligero alrededor de cada item */
-    border-radius: 8px;
-    background-color: white; /* Fondo blanco para cada item */
-  }
-  
-  /* Texto del servicio (izquierda) */
-  .service-text {
-    flex: 1; /* Ocupa el espacio restante */
-    padding-right: 20px; /* Espacio entre el texto y la imagen */
-  }
-  
-  /* Imagen del servicio (derecha) */
-  .service-image {
-    display: flex;
-    justify-content: flex-end; /* Alinea la imagen a la derecha */
-    width: 300px;
-    height: 300px;
-  }
-  
-  .service-image img {
-    object-fit: cover; /* Asegura que la imagen se recorte correctamente si no tiene las proporciones 1:1 */
-    border-radius: 8px;
-  }
-  
-  /* Botón de ver */
-  .btn-secondary {
-    background-color: #8a2be2; /* Usando morado */
-    border-color: #8a2be2;
-  }
-  
-  .btn-secondary:hover {
-    background-color: #7a1bd4;
-    border-color: #7a1bd4;
-  }
+  background-color: #ddedff; /* Color de fondo gris claro */
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+/* Cada item de servicio */
+.service-item {
+  display: flex;
+  align-items: center; /* Alinea verticalmente los elementos */
+  margin-bottom: 15px;
+  padding: 15px;
+  border: 1px solid #ddd; /* Borde ligero alrededor de cada item */
+  border-radius: 8px;
+  background-color: white; /* Fondo blanco para cada item */
+}
+
+/* Texto del servicio (izquierda) */
+.service-text {
+  flex: 1; /* Ocupa el espacio restante */
+  padding-right: 20px; /* Espacio entre el texto y la imagen */
+}
+
+/* Imagen del servicio (derecha) */
+.service-image {
+  display: flex;
+  justify-content: flex-end; /* Alinea la imagen a la derecha */
+  width: 300px;
+  height: 300px;
+}
+
+.service-image img {
+  object-fit: cover; /* Asegura que la imagen se recorte correctamente si no tiene las proporciones 1:1 */
+  border-radius: 8px;
+}
+
+/* Botón de ver */
+.btn-secondary {
+  background-color: #8a2be2; /* Usando morado */
+  border-color: #8a2be2;
+}
+
+.btn-secondary:hover {
+  background-color: #7a1bd4;
+  border-color: #7a1bd4;
+}
 
 /* publicacion */
 
-  .publicacion {
-    display: flex; /* Usamos flexbox para disposición */
-    justify-content: space-between; /* Deja el texto a la izquierda y la imagen a la derecha */
-    align-items: flex-start; /* Alinea los elementos al principio del contenedor */
-    margin-bottom: 20px; /* Espacio debajo de cada publicación */
-  }
-  
-  .texto {
-    display: flex; /* Usamos flexbox en el contenedor de texto */
-    flex-direction: column; /* Apilamos los párrafos uno debajo del otro */
-    gap: 10px; /* Añadimos un pequeño espacio entre los párrafos */
-  }
-  
-  .texto p {
-    margin: 0; /* Quitamos el margen predeterminado de los párrafos */
-  }
-  
-  .image-container {
-    margin-left: 20px; /* Espacio entre el texto y la imagen */
-  }
+.publicacion {
+  display: flex; /* Usamos flexbox para disposición */
+  justify-content: space-between; /* Deja el texto a la izquierda y la imagen a la derecha */
+  align-items: flex-start; /* Alinea los elementos al principio del contenedor */
+  margin-bottom: 20px; /* Espacio debajo de cada publicación */
+}
 
-  .publicacion {
-    background-color: #ddedff; /* Color de fondo gris claro */
-    padding: 20px;
-    border-radius: 8px;
-    margin: 0 auto;
-    width: 100%; 
-    justify-content: space-between; /* Espacio entre el texto y la imagen */
-    align-items: flex-start; /* Alinea los elementos al principio del contenedor */
-    margin-bottom: 20px; /* Espacio entre cada publicación */
-  }
+.texto {
+  display: flex; /* Usamos flexbox en el contenedor de texto */
+  flex-direction: column; /* Apilamos los párrafos uno debajo del otro */
+  gap: 10px; /* Añadimos un pequeño espacio entre los párrafos */
+}
+
+.texto p {
+  margin: 0; /* Quitamos el margen predeterminado de los párrafos */
+}
+
+.image-container {
+  margin-left: 20px; /* Espacio entre el texto y la imagen */
+}
+
+.publicacion {
+  background-color: #ddedff; /* Color de fondo gris claro */
+  padding: 20px;
+  border-radius: 8px;
+  margin: 0 auto;
+  width: 100%; 
+  justify-content: space-between; /* Espacio entre el texto y la imagen */
+  align-items: flex-start; /* Alinea los elementos al principio del contenedor */
+  margin-bottom: 20px; /* Espacio entre cada publicación */
+}
+
+.texto {
+  flex: 1; /* Hace que el bloque de texto ocupe el espacio disponible */
+  margin-right: 20px; /* Espacio entre el texto y la imagen */
+}
+
+.texto p {
+  margin: 0; /* Elimina el margen predeterminado de los párrafos */
+  padding-bottom: 5px; /* Espacio entre los párrafos */
+}
+
+.imagen {
+  flex-shrink: 0; /* Evita que la imagen se encoja */
+  display: flex;
+  justify-content: flex-end; /* Alinea la imagen a la derecha del contenedor */
+}
+
+.imagen img {
+  width: 500px; /* Establece un ancho fijo para la imagen */
+  height: 500px; /* Establece una altura fija para la imagen */
+  object-fit: cover; /* Asegura que la imagen cubra el espacio sin deformarse */
+  border-radius: 8px;
+}
+
+.starability-result {
+  display: inline-block;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: #ffd700; /* Color de las estrellas */
+}
+
+.starability-result::before {
+  content: '★★★★★';
+  letter-spacing: 3px;
+  background: linear-gradient(90deg, #ffd700 0%, #ccc 0%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
   
-  .texto {
-    flex: 1; /* Hace que el bloque de texto ocupe el espacio disponible */
-    margin-right: 20px; /* Espacio entre el texto y la imagen */
-  }
-  
-  .texto p {
-    margin: 0; /* Elimina el margen predeterminado de los párrafos */
-    padding-bottom: 5px; /* Espacio entre los párrafos */
-  }
-  
-  .imagen {
-    flex-shrink: 0; /* Evita que la imagen se encoja */
-    display: flex;
-    justify-content: flex-end; /* Alinea la imagen a la derecha del contenedor */
-  }
-  
-  .imagen img {
-    width: 500px; /* Establece un ancho fijo para la imagen */
-    height: 500px; /* Establece una altura fija para la imagen */
-    object-fit: cover; /* Asegura que la imagen cubra el espacio sin deformarse */
-    border-radius: 8px;
-  }
-    

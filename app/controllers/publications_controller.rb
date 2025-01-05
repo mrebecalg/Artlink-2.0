@@ -14,6 +14,7 @@ class PublicationsController < ApplicationController
   # GET /publications/1 or /publications/1.json
   def show
     @publication = Publication.find(params[:id])
+    @average_rating = @publication.average_rating
   end
   
   # GET /publications/new

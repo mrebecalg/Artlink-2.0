@@ -1,6 +1,6 @@
 <% content_for :title, "Editing request" %>
 
-<h1>Aceptar o rechazar</h1>
+<h1>Aceptar, rechazar o finalizar</h1>
 
 <%# <%= render "form", request: @request %> 
 <div>
@@ -9,7 +9,7 @@
 <%= form_with(model: @request) do |form| %>
   <div class="buttons-container">
     <strong>STATUS</strong>
-    <%= form.select :status, ["Aceptado","Rechazado"], { class: 'form-control' } %>
+    <%= form.select :status, ["Aceptado","Rechazado","Finalizado"], { class: 'form-control' } %>
     <br>
      <%= form.submit "Guardar", class:"btn btn-success" %>
   </div>

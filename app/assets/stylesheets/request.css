@@ -1,107 +1,122 @@
 #requests {
-    background-color: #ddedff; /* Color de fondo gris claro */
-    padding: 20px;
-    border-radius: 8px;
-    margin: 0 auto;
-    width: 100%; 
-    justify-content: space-between; /* Espacio entre el texto y la imagen */
-    align-items: flex-start; /* Alinea los elementos al principio del contenedor */
-    margin-bottom: 20px; /* Espacio entre cada publicación *//* Espacio superior entre la sección y el contenido */
-  }
-  
-  #requests h2 {
-    text-align: center; /* Centra el título */
-    color: #110c57; /* Color lilac oscuro */
-    margin-bottom: 20px;
-  }
-  
-  #requests_received, #requests_sent {
-    background-color: #f9f9f9; /* Fondo gris claro para las solicitudes */
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px; /* Espacio entre cada solicitud */
-    display: flex;
-    justify-content: space-between; /* Espacio entre el texto y el enlace */
-    align-items: flex-start;
-  }
-  
-  #requests_received p, #requests_sent p {
-    margin-top: 10px;
-    text-align: right; /* Alinea el enlace a la derecha */
-  }
-  
-  .btn-secondary {
-    background-color: #6a4fbb; /* Color lilac oscuro para el botón */
-    border: none;
-    padding: 8px 15px;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-  }
-  
-  .btn-secondary:hover {
-    background-color: #5a40a0; /* Color de hover */
-  }
-  
-  #requests_received, #requests_sent {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
-  
-  #requests_received .request, #requests_sent .request {
-    flex: 1;
-    margin-right: 15px;
-  }
-  
-  #requests_received img, #requests_sent img {
-    width: 300px; /* Ajusta el tamaño de las imágenes, si las hay */
-    height: 300px;
-    object-fit: cover; /* Mantiene la proporción de la imagen */
-    border-radius: 8px;
-  }
+  background-color: #ddedff; /* Color de fondo gris claro */
+  padding: 20px;
+  border-radius: 8px;
+  margin: 0 auto;
+  width: 100%; 
+  justify-content: space-between; /* Espacio entre el texto y la imagen */
+  align-items: flex-start; /* Alinea los elementos al principio del contenedor */
+  margin-bottom: 20px; /* Espacio entre cada publicación *//* Espacio superior entre la sección y el contenido */
+}
 
-  /* /////////// */
+#requests h2 {
+  text-align: center; /* Centra el título */
+  color: #110c57; /* Color lilac oscuro */
+  margin-bottom: 20px;
+}
 
-  .solicitud {
-    display: flex; /* Utiliza flexbox para alinear los elementos horizontalmente */
-    align-items: flex-start; /* Alinea los elementos al principio (parte superior) */
-    margin-bottom: 20px; /* Espacio entre solicitudes */
-    background-color: #f9f9f9; /* Fondo gris claro */
-    padding: 15px;
-    border-radius: 8px; /* Bordes redondeados */
-  }
-  
-  .imagen {
-    flex-shrink: 0; /* La imagen no se reducirá de tamaño */
-    margin-right: 20px; /* Espacio entre la imagen y el texto */
-  }
-  
-  .imagen img {
-    width: 300px; /* Establece el tamaño de la imagen */
-    height: 300px;
-    object-fit: cover; /* Mantiene la proporción de la imagen */
-    border-radius: 8px; /* Bordes redondeados para la imagen */
-  }
-  
-  .texto {
-    flex: 1; /* Toma todo el espacio disponible para el texto */
-  }
-  
-  .solicitud p {
-    margin: 5px 0; /* Espaciado entre los párrafos */
-  }
-  
-  .solicitud strong {
-    font-weight: bold;
-  }
+#requests_received, #requests_sent {
+  background-color: #f9f9f9; /* Fondo gris claro para las solicitudes */
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px; /* Espacio entre cada solicitud */
+  display: flex;
+  justify-content: space-between; /* Espacio entre el texto y el enlace */
+  align-items: flex-start;
+}
 
-  .buttons-container {
-    display: flex; /* Utiliza flexbox para alinear los botones en una fila */
-    gap: 10px; /* Espacio entre los botones */
-  }
-  
-  .btn {
-    padding: 8px 16px; /* Asegúrate de que los botones tengan un tamaño consistente */
-  }
-  
+#requests_received p, #requests_sent p {
+  margin-top: 10px;
+  text-align: right; /* Alinea el enlace a la derecha */
+}
+
+.btn-secondary {
+  background-color: #6a4fbb; /* Color lilac oscuro para el botón */
+  border: none;
+  padding: 8px 15px;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.btn-secondary:hover {
+  background-color: #5a40a0; /* Color de hover */
+}
+
+#requests_received, #requests_sent {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+#requests_received .request, #requests_sent .request {
+  flex: 1;
+  margin-right: 15px;
+}
+
+#requests_received img, #requests_sent img {
+  width: 300px; /* Ajusta el tamaño de las imágenes, si las hay */
+  height: 300px;
+  object-fit: cover; /* Mantiene la proporción de la imagen */
+  border-radius: 8px;
+}
+
+/* /////////// */
+
+.solicitud {
+  display: flex; /* Utiliza flexbox para alinear los elementos horizontalmente */
+  align-items: flex-start; /* Alinea los elementos al principio (parte superior) */
+  margin-bottom: 20px; /* Espacio entre solicitudes */
+  background-color: #f9f9f9; /* Fondo gris claro */
+  padding: 15px;
+  border-radius: 8px; /* Bordes redondeados */
+}
+
+.imagen {
+  flex-shrink: 0; /* La imagen no se reducirá de tamaño */
+  margin-right: 20px; /* Espacio entre la imagen y el texto */
+}
+
+.imagen img {
+  width: 300px; /* Establece el tamaño de la imagen */
+  height: 300px;
+  object-fit: cover; /* Mantiene la proporción de la imagen */
+  border-radius: 8px; /* Bordes redondeados para la imagen */
+}
+
+.texto {
+  flex: 1; /* Toma todo el espacio disponible para el texto */
+}
+
+.solicitud p {
+  margin: 5px 0; /* Espaciado entre los párrafos */
+}
+
+.solicitud strong {
+  font-weight: bold;
+}
+
+.buttons-container {
+  display: flex; /* Utiliza flexbox para alinear los botones en una fila */
+  gap: 10px; /* Espacio entre los botones */
+}
+
+.btn {
+  padding: 8px 16px; /* Asegúrate de que los botones tengan un tamaño consistente */
+}
+
+.starability-result {
+  display: inline-block;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: #ffd700; /* Color de las estrellas */
+}
+
+.starability-result::before {
+  content: '★★★★★';
+  letter-spacing: 3px;
+  background: linear-gradient(90deg, #ffd700 0%, #ccc 0%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
