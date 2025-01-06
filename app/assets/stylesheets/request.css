@@ -1,5 +1,5 @@
 #requests {
-  background-color: #ddedff; /* Color de fondo gris claro */
+  background-color: #f0ecff; /* Color de fondo gris claro */
   padding: 20px;
   border-radius: 8px;
   margin: 0 auto;
@@ -7,6 +7,7 @@
   justify-content: space-between; /* Espacio entre el texto y la imagen */
   align-items: flex-start; /* Alinea los elementos al principio del contenedor */
   margin-bottom: 20px; /* Espacio entre cada publicación *//* Espacio superior entre la sección y el contenido */
+  box-shadow: 0 4px 8px #2e085573;
 }
 
 #requests h2 {
@@ -30,18 +31,7 @@
   text-align: right; /* Alinea el enlace a la derecha */
 }
 
-.btn-secondary {
-  background-color: #6a4fbb; /* Color lilac oscuro para el botón */
-  border: none;
-  padding: 8px 15px;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-}
 
-.btn-secondary:hover {
-  background-color: #5a40a0; /* Color de hover */
-}
 
 #requests_received, #requests_sent {
   display: flex;
@@ -67,9 +57,10 @@
   display: flex; /* Utiliza flexbox para alinear los elementos horizontalmente */
   align-items: flex-start; /* Alinea los elementos al principio (parte superior) */
   margin-bottom: 20px; /* Espacio entre solicitudes */
-  background-color: #f9f9f9; /* Fondo gris claro */
+  background-color: #ffffff; /* Fondo gris claro */
   padding: 15px;
   border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px #2e085573;
 }
 
 .imagen {

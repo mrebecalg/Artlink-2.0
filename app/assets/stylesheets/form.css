@@ -8,10 +8,10 @@ h1 {
     max-width: 500px; /* Ajustamos el ancho máximo del formulario */
     margin: 30px auto; /* Centrado vertical y horizontal */
     padding: 20px;
-    background-color: #4da0ff; /* Color de fondo azul */
+    background-color: #f0ecff; /* Color de fondo azul */
     border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    color: white; /* Color de texto blanco */
+    box-shadow: 0 4px 8px #2e085573;
+    color: #140622; /* Color de texto blanco */
   }
   
   /* Estilo de los campos del formulario */
@@ -26,8 +26,8 @@ h1 {
   
   /* Estilo del botón de submit */
   .form .btn-success {
-    background-color: #ffffff; /* Verde para el botón de guardar */
-    color: #007bff;
+    background-color: #5e18af; /* Verde para el botón de guardar */
+    color: #ffffff;
     padding: 12px 20px;
     width: 100%; /* El botón ocupará todo el ancho disponible */
     border-radius: 5px;
@@ -37,8 +37,8 @@ h1 {
   }
   
   .form .btn-success:hover {
-    background-color: #a4f5d7; 
-    color: #007bff;/* Cambiar color al pasar el mouse */
+    background-color: #35b94b; 
+    color: #150725;/* Cambiar color al pasar el mouse */
   }
   
   /* Estilo de las etiquetas */

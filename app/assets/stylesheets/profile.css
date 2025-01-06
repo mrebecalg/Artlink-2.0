@@ -1,9 +1,10 @@
 /* Estilo general del contenedor de perfil */
 .profile {
-    background-color: #ddedff; /* Color de fondo gris claro */
+    background-color: #fdfbff; /* Color de fondo gris claro */
     padding: 20px;
     border-radius: 8px;
     margin: 20px 0;
+    box-shadow: 0 4px 8px #2e085573;
   }
   
   /* Encabezado del perfil */
@@ -13,7 +14,7 @@
   
   .profile-header h2 {
     font-size: 2.5em;
-    color: #1DA1F2; /* Azul similar al de Twitter */
+    color: #100327; /* Azul similar al de Twitter */
     margin-bottom: 10px;
   }
   
@@ -31,7 +32,7 @@
   }
   
   .social-links a {
-    color: #0f5daa;
+    color: #450faa;
     text-decoration: none;
     font-size: 1.2em;
   }

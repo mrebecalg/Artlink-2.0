@@ -33,6 +33,7 @@
     <% else %>
       <p>Aún no te postulas, hazlo aquí:</p>
       <%= link_to "Postulate", new_postulation_path, class:"btn btn-primary edit-btn" %>
+      <%= link_to "Volver", :back, class:"btn btn-secondary edit-btn" %>
     <% end %>
   </div>
 <% end %>  

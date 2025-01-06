@@ -4,9 +4,9 @@
     max-width: 400px;
     margin: 50px auto;
     padding: 30px;
-    background-color: #f9f9f9;
+    background-color: #f8f6ff;;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px #2e085573;
     text-align: center;
   }
   
@@ -41,7 +41,7 @@
   }
   
   .field input:focus {
-    border-color: #5d5dff;
+    border-color: #a35dff;
     outline: none;
   }
   
@@ -57,8 +57,8 @@
   }
   
   .actions .btn-success {
-    background-color: #4CAF50;
-    color: white;
+    background-color: #a967ff;
+    color: #ffffff;
   }
   
   .actions .btn-success:hover {

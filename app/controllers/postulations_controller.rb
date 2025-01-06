@@ -16,7 +16,7 @@ class PostulationsController < ApplicationController
   def new
     # Redirigir si el usuario ya tiene una postulación
     if current_user.sent_postulation.present?
-      redirect_to postulation_path(current_user.sent_postulation), alert: "You have already submitted a postulation"
+      redirect_to postulation_path(current_user.sent_postulation), alert: "Ya tienes una postulación activa"
     else
       @postulation = Postulation.new(sender_id: current_user.id)
     end
@@ -29,12 +29,12 @@ class PostulationsController < ApplicationController
   # POST /postulations or /postulations.json
   def create
     if current_user.sent_postulation.present?
-      redirect_to postulation_path(current_user.sent_postulation), alert: "You have already submitted a postulation."
+      redirect_to postulation_path(current_user.sent_postulation)
     else
       @postulation = Postulation.new(postulation_params)
       respond_to do |format|
         if @postulation.save
-          format.html { redirect_to @postulation, notice: "Postulation was successfully created." }
+          format.html { redirect_to @postulation }
           format.json { render :show, status: :created, location: @postulation }
         else
           format.html { render :new, status: :unprocessable_entity }

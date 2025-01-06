@@ -1,9 +1,11 @@
 /* Contenedor principal */
 .service-container {
-  background-color: #ddedff; /* Color de fondo gris claro */
+  background-color: #d5c9ff; /* Color de fondo gris claro */
   padding: 20px;
   border-radius: 8px;
   margin: 20px 0;
+  box-shadow: 0 4px 8px #2e085573; /* Sombra suave */
+  color: #140622;
 }
 
 /* Cada item de servicio */
@@ -12,7 +14,7 @@
   align-items: center; /* Alinea verticalmente los elementos */
   margin-bottom: 15px;
   padding: 15px;
-  border: 1px solid #ddd; /* Borde ligero alrededor de cada item */
+  border: 1px solid #1a173b3a; /* Borde ligero alrededor de cada item */
   border-radius: 8px;
   background-color: white; /* Fondo blanco para cada item */
 }
@@ -38,7 +40,7 @@
 
 /* Botón de ver */
 .btn-secondary {
-  background-color: #8a2be2; /* Usando morado */
+  background-color: #2f0b52; /* Usando morado */
   border-color: #8a2be2;
 }
 
@@ -71,7 +73,7 @@
 }
 
 .publicacion {
-  background-color: #ddedff; /* Color de fondo gris claro */
+  background-color: #fcf9ff; 
   padding: 20px;
   border-radius: 8px;
   margin: 0 auto;
@@ -79,6 +81,7 @@
   justify-content: space-between; /* Espacio entre el texto y la imagen */
   align-items: flex-start; /* Alinea los elementos al principio del contenedor */
   margin-bottom: 20px; /* Espacio entre cada publicación */
+  box-shadow: 0 4px 8px #2e085573;
 }
 
 .texto {

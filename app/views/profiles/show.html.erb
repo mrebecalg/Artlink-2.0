@@ -12,7 +12,7 @@
 
   <%= link_to 'Editar perfil', edit_profile_path, class: "btn btn-primary edit-btn" %>
   <% if current_user.access == 1 %>
-    <%= link_to "Ver mi postulación", postulations_path, class:"btn btn-primary edit-btn" %>
+    <%= link_to "Ver mi postulación", postulations_path, class:"btn btn-secondary edit-btn" %>
   <% end %>
 </div>
 

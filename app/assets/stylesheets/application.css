@@ -1,8 +1,24 @@
 /* Asegúrate de que el contenedor de la navbar sea flexible */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #140622;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 .navbar {
     display: flex;
     justify-content: space-between; /* Esto mantiene el brand a la izquierda y el resto a la derecha */
     align-items: center; /* Alinea los elementos verticalmente */
+    background: #5e18af;
   }
   
   /* Alineación del contenedor de los elementos */
@@ -37,7 +53,7 @@
   }
   
   .navbar-nav .nav-item .nav-link:hover {
-    color: #f1f1f1; /* Cambia el color cuando pasas el mouse */
+    color: #ff9a9e; /* Cambia el color cuando pasas el mouse */
   }
   
   /* Estilo para los botones de usuario (registrarse, iniciar sesión) */
@@ -54,7 +70,7 @@
   }
   
   .navbar-text .navbar-link:hover {
-    color: #f1f1f1; /* Cambia el color al pasar el mouse */
+    color: #ff9a9e; /* Cambia el color al pasar el mouse */
   }
   
   /* Estilo para el botón de la hamburguesa (en dispositivos móviles) */
@@ -65,4 +81,78 @@
   .navbar-toggler-icon {
     background-color: #fff; /* Color blanco para el icono */
   }
-  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 15px;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+  nav a:hover {
+    color: #ff9a9e;
+}
+
+nav a:hover::before {
+    width: 100%;
+}
+
+footer {
+  text-align: center;
+  padding: 10px 20px;
+  color: #140622;
+  margin-top: auto;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.btn-secondary {
+  background-color: #250c46 !important;  /* Color lilac oscuro para el botón */
+  border: none !important;
+  padding: 8px 15px;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.btn-secondary:hover {
+  background-color: #7f27e2 !important; /* Color de hover */
+  color: #ffffff !important;
+}
+
+.btn-primary {
+  background-color: #4b1588 !important;  /* Color lilac oscuro para el botón */
+  border: none !important;
+  padding: 8px 15px;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.btn-primary:hover {
+  background-color: #3584b9 !important; /* Color de hover */
+  color: #ffffff !important;
+}
+
+.btn-success{
+  background-color: #a967ff!important;  /* Color lilac oscuro para el botón */
+  border: none !important;
+  padding: 8px 15px;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.btn-success:hover {
+  background-color: #45a049 !important; /* Color de hover */
+  color: #ffffff !important;
+}

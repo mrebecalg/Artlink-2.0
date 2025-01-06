@@ -1,7 +1,7 @@
 <div class="px-4 py-5 my-5 text-center">
-  <h1 class="display-5 fw-bold">ARTLINK</h1>
+  <h1 class="display-5 fw-bold">.ARTLINK.</h1>
   <div class="col-lg-6 mx-auto">
-    <p class="lead mb-4">Haz tus ideas realidad!</p>
+    <p class="lead mb-4">Haz tus ideas realidad</p>
   </div>
 </div>
 
@@ -15,17 +15,17 @@
     <%= submit_tag "Buscar", class: "btn btn-primary" %>
   <% end %>
 </div>
+<br>
+<h3>Servicios </h3>
 <div class="service-container">
-  <h3>Servicios</h3>
   <% @publications.each do |publication| %>
     <div class="service-item">
       <div class="service-text">
         <p><strong>Autor:</strong> <%= publication.user.username %></p>
         <p><strong>Título:</strong> <%= publication.name %></p>
         <p><strong>Precio:</strong> <%= publication.price %></p>
-        <p>
-          <%= link_to "Ver", publication, class:"btn btn-secondary" %>
-        </p>
+        <br>
+        <p><%= link_to "Ver", publication, class:"btn btn-secondary" %></p>
       </div>
       <div class="service-image">
         <%= image_tag(publication.picture_url, width: 300, height: 300) if publication.picture? %>

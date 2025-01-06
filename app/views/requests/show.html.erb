@@ -2,28 +2,26 @@
 
 <%= render @request %>
 
-<div class="buttons-container">
-  <%= link_to "Regresar a Solicitudes", requests_path, class:"btn btn-secondary" %>
-  
-  <% if current_user.id == @request.sender_id %>
-    <%= button_to "Cancelar Solicitud", @request, method: :delete, class:"btn btn-danger" %>
-  <% end %>
-</div>
-
 <% if @request.status == 'Finalizado' && @request.rating.nil? && current_user.id == @request.sender_id %>
   <%= form_with model: @request, url: rate_request_path(@request), method: :patch do |form| %>
-    <div class="field">
-      <%= form.label :rating %>
-      <%= form.number_field :rating %>
+    <div>
+      <br>
+      <strong>Califica el servicio:</strong>
       <div id="star-rating"></div>
       <%= form.hidden_field :rating, id: "rating-input" %>
+      <%= form.submit "Calificar", class:"btn btn-success edit-btn" %>
     </div>
-    <div class="actions">
-      <%= form.submit "Rate" %>
-    </div>
+    <br>
   <% end %>
 <% end %>
-
+    <div class="buttons-container">
+    <%= link_to "Regresar a Solicitudes", requests_path, class:"btn btn-secondary" %>
+    <% if current_user.id == @request.sender_id %>
+      <% if @request.status == "Pendiente" %>
+        <%= button_to "Cancelar Solicitud", @request, method: :delete, class:"btn btn-danger" %>
+      <% end %>
+    <% end %>
+    </div>
 <script>
   $(document).ready(function() {
     $('#star-rating').raty({
